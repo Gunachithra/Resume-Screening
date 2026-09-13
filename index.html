@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>AI Resume Screening</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>AI Resume Screening System</h1>
+
+```
+<h3>Select Job Role</h3>
+
+<select id="jobRole">
+    <option value="">-- Select Job Role --</option>
+    <option value="java">Java Developer</option>
+    <option value="web">Web Developer</option>
+    <option value="data">Data Analyst</option>
+    <option value="software">Software Developer</option>
+</select>
+
+<h3>Enter Job Required Skills (Comma Separated)</h3>
+<textarea id="jobDesc" placeholder="Example: java, python, html, css, javascript, sql"></textarea>
+
+<h3>Enter Candidate Name</h3>
+<input type="text" id="candidateName" placeholder="Example: Arun Kumar">
+
+<h3>Upload Candidate Resume (PDF) or Paste Content</h3>
+<input type="file" id="resumeFile" accept=".pdf">
+<textarea id="resumeText" placeholder="Or paste resume text here"></textarea>
+
+<button id="checkBtn">Check Match</button>
+
+<div class="progress-bar">
+    <div class="progress" id="progressBar">0%</div>
+</div>
+
+<div id="result"></div>
+
+<h3>Candidate Dashboard</h3>
+
+<!-- Candidate Search -->
+<div class="search-section">
+    <h3>Search Candidate</h3>
+    <input type="text" id="searchCandidate"
+           placeholder="searchCandidate">
+    <button id="searchBtn">Search Candidate</button>
+    <input type="text" id="searchSkill" placeholder=" Enter Skill">
+    <button id="searchSkillBtn">Search Skill</button>
+    <button id="rankBtn">Rank Candidates</button>
+    <button id="showAllBtn">Show All</button>
+  
+
+<div class="filter-section">
+    <h3>Advanced Candidate Filter</h3>
+
+    <label>Minimum Match %:</label>
+    <select id="matchFilter">
+        <option value="0">All Candidates</option>
+        <option value="60">60% and above</option>
+        <option value="70">70% and above</option>
+        <option value="80">80% and above</option>
+        <option value="90">90% and above</option>
+    </select>
+
+    <label>Status:</label>
+    <select id="statusFilter">
+        <option value="All">All Status</option>
+        <option value="Excellent Match">Excellent Match</option>
+        <option value="Moderate Match">Moderate Match</option>
+        <option value="Low Match">Low Match</option>
+    </select>
+
+    <label>Sort By:</label>
+    <select id="sortFilter">
+        <option value="high">Highest Match %</option>
+        <option value="low">Lowest Match %</option>
+        <option value="newest">Newest First</option>
+        <option value="oldest">Oldest First</option>
+    </select>
+
+    <button id="applyFilterBtn">Apply Filter</button>
+</div>
+</div>
+
+<table id="dashboard">
+    <thead>
+        <tr>
+            <th>Name / File</th>
+            <th>Matched Skills</th>
+            <th>Match %</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<p class="note">
+    Note: Upload PDF or paste resume text to test candidate comparison.
+</p>
+```
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
